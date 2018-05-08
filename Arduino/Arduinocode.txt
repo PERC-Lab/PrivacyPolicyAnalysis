@@ -1,12 +1,12 @@
-int led = 13; 
+int led = 13; // Determines which led point is being used
 void setup() { 
- pinMode(led, OUTPUT); 
-   Serial.begin(9600); 
+ pinMode(led, OUTPUT); // Select the mode you wish your led to be; either used for input or output
+   Serial.begin(9600); // The serial number
 } 
 void loop() { 
- if (Serial.read() == 'No') { 
-    digitalWrite(led, HIGH); 
- }else if(Serial.read() == 'F') { 
-    digitalWrite(led, LOW); 
+ if (Serial.read() == 'A') {     //If you enter 'A' in the Serial Monitor,
+    digitalWrite(led, HIGH);      //it will send a high voltage to the pinpoint on the breadboard, making the light turn on
+ }else if(Serial.read() == 'B') { //If you enter 'B' in the Serial Monitor,
+    digitalWrite(led, LOW);       //it will take off the voltage to the pinpoint on the breadboard, making the light turn off
  } 
 } 
